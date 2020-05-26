@@ -3,13 +3,11 @@ server:
 
 spring:
   application:
-    name: eureka-order-service
+    name: cloud-order-service
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
