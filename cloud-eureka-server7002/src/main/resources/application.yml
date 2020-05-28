@@ -3,12 +3,11 @@ server:
 
 eureka:
   instance:
-    hostname: eureka7002.com #eureka服务端的实例名称
-    prefer-ip-address: true
+    hostname: eureka7002.com #eureka服务端的实例名称 ，集群环境下要求名称不一样，此处注意windows环境下hosts文件的配置
   client:
     # false 表示不向注册中心注册自己
     register-with-eureka: false
     # false 表示自己就是注册中心， 我的职责即使维护服务实例，并不需要去检索服务
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka7001.com/eureka/,http://eureka7003.com/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7003.com:7003/eureka
