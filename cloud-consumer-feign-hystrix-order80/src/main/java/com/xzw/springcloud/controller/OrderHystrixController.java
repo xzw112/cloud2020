@@ -16,15 +16,15 @@ public class OrderHystrixController {
     private PaymentHystrixService paymentHystrixService;
 
     @GetMapping("/consumer/payment/hystrix/ok/{id}")
-    String paymentInfo_ok(@PathVariable("id")Integer id){
+    public String paymentInfo_ok(@PathVariable("id")Integer id){
         String result = paymentHystrixService.paymentInfo_ok(id);
         return result;
     }
 
-    @GetMapping("/payment/hystrix/timeout/{id}")
-    String paymentInfo_TimeOut(@PathVariable("id")Integer id){
+    @GetMapping("/consumer/payment/hystrix/timeout/{id}")
+    public String paymentInfo_TimeOut(@PathVariable("id")Integer id){
+        int num = 10 / 0;
         String result = paymentHystrixService.paymentInfo_TimeOut(id);
         return result;
     }
-
 }
