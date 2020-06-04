@@ -1,6 +1,8 @@
 package com.xzw.springcloud.controller;
 
+import com.xzw.springcloud.entities.CommonResult;
 import com.xzw.springcloud.service.PaymentHystrixService;
+import com.xzw.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,8 @@ public class OrderHystrixController {
 
     @Resource
     private PaymentHystrixService paymentHystrixService;
+    @Resource
+    private PaymentService paymentService;
 
     @GetMapping("/consumer/payment/hystrix/ok/{id}")
     public String paymentInfo_ok(@PathVariable("id")Integer id){
@@ -26,5 +30,11 @@ public class OrderHystrixController {
         int num = 10 / 0;
         String result = paymentHystrixService.paymentInfo_TimeOut(id);
         return result;
+    }
+
+    @GetMapping("/consumer/payment/getPaymentById/{id}")
+    public CommonResult getPaymentById(@PathVariable("id")Integer id){
+       CommonResult commonResult =  paymentService.get(id);
+       return commonResult;
     }
 }
