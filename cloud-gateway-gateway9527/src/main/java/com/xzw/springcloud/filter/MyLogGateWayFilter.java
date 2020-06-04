@@ -12,6 +12,9 @@ import reactor.core.publisher.Mono;
 
 import java.util.Date;
 
+/***
+ * gateway自定义过滤
+ */
 @Component
 @Slf4j
 public class MyLogGateWayFilter implements GlobalFilter, Ordered {
