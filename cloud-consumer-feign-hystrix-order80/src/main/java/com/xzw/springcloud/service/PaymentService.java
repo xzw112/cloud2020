@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
 @FeignClient(value = "CLOUD-PAYMENT-SERVICE", fallback = PaymentFallbackService1.class)
+//@FeignClient(value = "CLOUD-GATEWAY", fallback = PaymentFallbackService1.class)
 public interface PaymentService {
     @GetMapping("/payment/get/{id}")
     CommonResult get(@PathVariable("id") Integer id);

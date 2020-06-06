@@ -11,12 +11,14 @@
 
     <artifactId>cloud-gateway-gateway9527</artifactId>
 
-    <!--gateway-->
+
     <dependencies>
+        <!--gateway-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+        <!--gateway-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
