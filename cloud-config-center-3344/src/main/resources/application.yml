@@ -11,7 +11,7 @@ spring:
         git:
           uri: https://github.com/xzw112/springcloud-config # gitHub仓库地址
           search-paths:
-            - springcloud-config # 配置名称
+            - springcloud-config  # 配置名称
       label: master #分支
 
 #rabbitmq 相关配置
